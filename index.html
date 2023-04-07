@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healthy Meals</title>
+    <title>Random Healthy Meals Generator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="greeting.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body style="transition: all 1s ease" onload="loadName()">
+    <header>
+      <h1>Healthy Meals Planner</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- ================== S T A R T  -  G R E E T I N G ================== -->
+    <div id="greeting">
+      <div id="nameInputContainer" class="nameInputContainer">
+        <label for="nameInput">Enter your name:</label>
+        <input type="text" id="nameInput" value="" />
+        <button type="button" class="btn-dark" onclick="saveName()">
+          Save Name
+        </button>
+      </div>
+    </div>
+    <!-- ================== E N D  -  G R E E T I N G ================== -->
+
+    <!-- ================== S T A R T  -  G R E E T I N G ================== -->
+    <div id="motivation-message">
+      <div class="card">
+        <div class="card-header">Motivational Message</div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p id="message">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              posuere erat a ante.
+            </p>
+            <footer class="blockquote-footer">
+              Written by
+              <cite title="https://type.fit/api/quotes"
+                ><p>&copy; Mohammed-qasim</p></cite
+              >
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+    <!-- ================== E N D  -  G R E E T I N G ================== -->
+
+    <!-- ================== S T A R T  -  M E A L  -  P L A N N E R ================== -->
+    <main>
+      <div class="container">
+        <h5 class="card-title">Meals for today</h5>
+        <p class="card-text">Here are your meals for today:</p>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Meal One</h5>
+                <p class="card-text" id="meal1">
+                  This is the description for meal one.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Meal Two</h5>
+                <p class="card-text" id="meal2">
+                  This is the description for meal two.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Total Calories</h5>
+                <p class="card-text">
+                  Total calories for today: <span id="totalCalories"></span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ================== E N D  -  M E A L  -  P L A N N E R ================== -->
+
+    <!-- ================== S T A R T  -  F O O T E R ================== -->
+    <footer>
+      <p>Mohammed-qasim &copy; 2023 all rights reserved</p>
+    </footer>
+
+    <!-- ================== E N D  -  F O O T E R ================== -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+    <script src="greeting.js"></script>
+    <script src="dark.js"></script>
+  </body>
+</html>
