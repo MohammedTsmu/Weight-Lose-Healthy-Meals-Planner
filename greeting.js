@@ -24,11 +24,13 @@ function saveName() {
 //             var minute = now.getMinutes();
 
 //             // Determine the appropriate greeting based on the time of day
+// }
 //             var greeting;
 //             if (hour >= 0 && hour < 12) {
 //                 greeting = "Good morning";
 //                 // Display the greeting with the current time in minutes
 //                 document.getElementById("greeting").innerHTML = "<div class='greeting'><h1>" + hour + ":" + (minute < 10 ? "0" : "") + minute + "am, " + greeting + ", " + name + "!</h1><p>Welcome back to our food planner. We're glad to have you here!</p></div>";
+
 //             } else if (hour >= 12 && hour < 18) {
 //                 greeting = "Good afternoon";
 //                 // Display the greeting with the current time in minutes
@@ -40,7 +42,7 @@ function saveName() {
 //             }
 //         }, 1000); // Update every 1000 milliseconds (1 second)
 
-//         // document.getElementById("greeting").innerHTML = greeting + ", " + name + "!";
+// document.getElementById("greeting").innerHTML = greeting + ", " + name + "!";
 //         document.getElementById("nameInputContainer").style.display = "none";
 //     }
 // }
@@ -55,20 +57,28 @@ function loadName() {
             var hour = now.getHours();
             var minute = now.getMinutes();
 
-            // Convert to 12-hour format from 24 format
-            var ampm = hour >= 12 ? 'pm' : 'am';
-            hour = hour % 12;
-            hour = hour ? hour : 12; // handle midnight (0 hours)
+            // Determine the appropriate greeting based on the time of day
+            var ampm;
 
             // Determine the appropriate greeting based on the time of day
             var greeting;
             if (hour >= 0 && hour < 12) {
                 greeting = "Good morning";
-            } else if (hour >= 12 && hour < 18) {
+            }
+            else if (hour >= 12 && hour < 18) {
                 greeting = "Good afternoon";
             } else {
                 greeting = "Good evening";
             }
+
+            if (hour >= 12) {
+                ampm = 'pm';
+                hour -= 12;
+            } else {
+                ampm = 'am';
+            }
+            hour = hour ? hour : 12; // handle midnight (0 hours)
+
 
             // Display the greeting with the current time in minutes
             document.getElementById("greeting").innerHTML = "<div class='greeting'><h1>" + hour + ":" + (minute < 10 ? "0" : "") + minute + " " + ampm + ", " + greeting + ", " + name + "!</h1></div>";
