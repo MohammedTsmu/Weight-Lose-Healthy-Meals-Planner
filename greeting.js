@@ -1,18 +1,19 @@
 // ========================== S T A R T  -  G R E E T I N G =========================
-// function saveName() {
-//     var name = document.getElementById("nameInput").value;
-//     if (localStorage.getItem("name") != name) {
-//         // Reload the current page
-//         location.reload();
+function saveName() {
+    var name = document.getElementById("nameInput").value;
+    if (localStorage.getItem("name") != name) {
+        // Reload the current page
+        location.reload();
 
-//         localStorage.setItem("name", name);
-//         // document.getElementById("nameInputContainer").style.display = "none";
+        localStorage.setItem("name", name);
+        // document.getElementById("nameInputContainer").style.display = "none";
 
-//         // Reload the current page
-//         location.reload();
-//     }
-// }
+        // Reload the current page
+        location.reload();
+    }
+}
 
+// 24 hours format
 // function loadName() {
 //     var name = localStorage.getItem("name");
 //     if (name != null) {
@@ -44,6 +45,7 @@
 //     }
 // }
 
+// 12 hours format
 function loadName() {
     var name = localStorage.getItem("name");
     if (name != null) {
@@ -78,7 +80,6 @@ function loadName() {
 }
 
 // ========================== E N D  -  G R E E T I N G =========================
-// -------------------------------------------------------------------------------------------------------------
 
 
 
