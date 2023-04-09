@@ -1,3 +1,8 @@
+html {
+  scroll-behavior: smooth;
+  /* transition-timing-function: ease-out; */
+}
+
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
@@ -10,30 +15,6 @@ header {
   background-color: #333;
   color: #fff;
   padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-nav li {
-  margin-right: 20px;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-}
-
-nav a:hover {
-  color: #f00;
 }
 
 main {
@@ -69,6 +50,9 @@ footer {
     clear: left;
   }
 }
+.col-sm-12 {
+  margin: 20px 0;
+}
 
 footer {
   background-color: #333;
@@ -76,8 +60,18 @@ footer {
   padding: 10px;
   text-align: center;
 }
+#message {
+  border-bottom: 3px dashed #f9a03f;
+  box-shadow: 0 0 10px #f9a03f;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding: 40px;
+}
 .blockquote-footer {
-  background-color: violet;
+  background-color: #eee;
   color: #000;
 }
 
@@ -89,5 +83,71 @@ footer {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.25);
   border: none;
+}
+
+.card-title {
+  color: #b26f28;
+}
+
+.col-sm-12 > div {
+  border-bottom: 3px dashed #f9a03f;
+  box-shadow: 0 0 10px #f9a03f;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+#scrollTopButton {
+  border: 1px solid #eee;
+  box-shadow: 0 0 10px #f9a03f;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  /**/
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 20px;
+  line-height: 40px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  text-decoration: none;
+}
+
+#scrollTopButton.active {
+  opacity: 0.8;
+  visibility: visible;
+}
+
+.orange {
+  color: #f9a03f;
+}
+.card-child {
+  border: 3px dashed #f9a03f;
+  box-shadow: 0 0 10px #f9a03f;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
