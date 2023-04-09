@@ -1,17 +1,48 @@
 // ========================== S T A R T  -  G R E E T I N G =========================
-function saveName() {
-    var name = document.getElementById("nameInput").value;
-    if (localStorage.getItem("name") != name) {
-        // Reload the current page
-        location.reload();
+// function saveName() {
+//     var name = document.getElementById("nameInput").value;
+//     if (localStorage.getItem("name") != name) {
+//         // Reload the current page
+//         location.reload();
 
-        localStorage.setItem("name", name);
-        // document.getElementById("nameInputContainer").style.display = "none";
+//         localStorage.setItem("name", name);
+//         // document.getElementById("nameInputContainer").style.display = "none";
 
-        // Reload the current page
-        location.reload();
-    }
-}
+//         // Reload the current page
+//         location.reload();
+//     }
+// }
+
+// function loadName() {
+//     var name = localStorage.getItem("name");
+//     if (name != null) {
+//         setInterval(function () {
+//             // Get the current time in hours and minutes
+//             var now = new Date();
+//             var hour = now.getHours();
+//             var minute = now.getMinutes();
+
+//             // Determine the appropriate greeting based on the time of day
+//             var greeting;
+//             if (hour >= 0 && hour < 12) {
+//                 greeting = "Good morning";
+//                 // Display the greeting with the current time in minutes
+//                 document.getElementById("greeting").innerHTML = "<div class='greeting'><h1>" + hour + ":" + (minute < 10 ? "0" : "") + minute + "am, " + greeting + ", " + name + "!</h1><p>Welcome back to our food planner. We're glad to have you here!</p></div>";
+//             } else if (hour >= 12 && hour < 18) {
+//                 greeting = "Good afternoon";
+//                 // Display the greeting with the current time in minutes
+//                 document.getElementById("greeting").innerHTML = "<div class='greeting'><h1>" + hour + ":" + (minute < 10 ? "0" : "") + minute + "pm, " + greeting + ", " + name + "!</h1><p>Welcome back to our food planner. We're glad to have you here!</p></div>";
+//             } else {
+//                 greeting = "Good evening";
+//                 // Display the greeting with the current time in minutes
+//                 document.getElementById("greeting").innerHTML = "<div class='greeting'><h1>" + hour + ":" + (minute < 10 ? "0" : "") + minute + "pm, " + greeting + ", " + name + "!</h1><p>Welcome back to our food planner. We're glad to have you here!</p></div>";
+//             }
+//         }, 1000); // Update every 1000 milliseconds (1 second)
+
+//         // document.getElementById("greeting").innerHTML = greeting + ", " + name + "!";
+//         document.getElementById("nameInputContainer").style.display = "none";
+//     }
+// }
 
 function loadName() {
     var name = localStorage.getItem("name");
@@ -22,27 +53,30 @@ function loadName() {
             var hour = now.getHours();
             var minute = now.getMinutes();
 
+            // Convert to 12-hour format from 24 format
+            var ampm = hour >= 12 ? 'pm' : 'am';
+            hour = hour % 12;
+            hour = hour ? hour : 12; // handle midnight (0 hours)
+
             // Determine the appropriate greeting based on the time of day
             var greeting;
             if (hour >= 0 && hour < 12) {
                 greeting = "Good morning";
-                // Display the greeting with the current time in minutes
-                document.getElementById("greeting").innerHTML = "<div class='greeting'><h1>" + hour + ":" + (minute < 10 ? "0" : "") + minute + "am, " + greeting + ", " + name + "!</h1><p>Welcome back to our food planner. We're glad to have you here!</p></div>";
             } else if (hour >= 12 && hour < 18) {
                 greeting = "Good afternoon";
-                // Display the greeting with the current time in minutes
-                document.getElementById("greeting").innerHTML = "<div class='greeting'><h1>" + hour + ":" + (minute < 10 ? "0" : "") + minute + "pm, " + greeting + ", " + name + "!</h1><p>Welcome back to our food planner. We're glad to have you here!</p></div>";
             } else {
                 greeting = "Good evening";
-                // Display the greeting with the current time in minutes
-                document.getElementById("greeting").innerHTML = "<div class='greeting'><h1>" + hour + ":" + (minute < 10 ? "0" : "") + minute + "pm, " + greeting + ", " + name + "!</h1><p>Welcome back to our food planner. We're glad to have you here!</p></div>";
             }
+
+            // Display the greeting with the current time in minutes
+            document.getElementById("greeting").innerHTML = "<div class='greeting'><h1>" + hour + ":" + (minute < 10 ? "0" : "") + minute + " " + ampm + ", " + greeting + ", " + name + "!</h1></div>";
         }, 1000); // Update every 1000 milliseconds (1 second)
 
         // document.getElementById("greeting").innerHTML = greeting + ", " + name + "!";
         document.getElementById("nameInputContainer").style.display = "none";
     }
 }
+
 // ========================== E N D  -  G R E E T I N G =========================
 // -------------------------------------------------------------------------------------------------------------
 
