@@ -30,13 +30,23 @@
     />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="apple-touch-icon.png" type="image/x-icon" />
+
+    <!-- Font awesome 6.0.0-->
+    <script
+      src="https://kit.fontawesome.com/92b9e9e786.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <!-- Body -->
   <body onload="loadName()">
     <!-- Header -->
     <header>
-      <h1>Meals Picker <span class="orange">{Weight Lose}</span></h1>
+      <h1>
+        Meals Picker
+        <br /><span class="orange">Weight Lose </span
+        ><i class="fa-solid fa-weight-scale" style="color: #f9a03f"></i>
+      </h1>
     </header>
 
     <!-- Greeting -->
@@ -55,13 +65,20 @@
       <div class="card">
         <div class="card-body">
           <blockquote class="blockquote mb-0">
-            <div class="card-header">Motivational Message</div>
+            <div class="card-header">
+              Motivational Message
+              <i class="fa-solid fa-spa" style="color: #f9a03f"></i>
+            </div>
             <p id="message">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
               posuere erat a ante.
             </p>
             <footer class="blockquote-footer">
-              by✍
+              by<i
+                class="fa-solid fa-feather-pointed"
+                style="color: #f9a03f"
+              ></i>
+
               <cite title="https://type.fit/api/quotes"
                 ><p>Mohammed-qasim</p></cite
               >
@@ -74,12 +91,18 @@
     <!-- Meal's picker -->
     <main>
       <div class="container">
-        <h5 class="card-title">Meals of the day</h5>
+        <h5 class="card-title">
+          Meals of the day
+          <i class="fa-solid fa-utensils"></i>
+        </h5>
         <div class="row">
           <div class="col-sm-12">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Meal One - الوجبة الأولى</h5>
+                <h5 class="card-title">
+                  Meal One
+                  <i class="fa-solid fa-drumstick-bite"></i>
+                </h5>
                 <p class="card-text" id="meal1">
                   This is the description for meal one.
                 </p>
@@ -89,7 +112,10 @@
           <div class="col-sm-12">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Meal Two - الوجبة الثانية</h5>
+                <h5 class="card-title">
+                  Meal Two
+                  <i class="fa-solid fa-fish"></i>
+                </h5>
                 <p class="card-text" id="meal2">
                   This is the description for meal two.
                 </p>
@@ -99,9 +125,12 @@
           <div class="col-sm-12">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Total Calories - السعرات الكلية</h5>
+                <h5 class="card-title">
+                  Total Calories
+                  <i class="fa-solid fa-fire-flame-curved"></i>
+                </h5>
                 <p class="card-text">
-                  Total calories for today:<span id="totalCalories"></span>
+                  <span id="totalCalories"></span>
                 </p>
               </div>
             </div>
@@ -111,7 +140,9 @@
     </main>
 
     <!-- Scroll to top -->
-    <a href="#" id="scrollTopButton" title="Scroll To Top">&#8593;</a>
+    <a href="#" id="scrollTopButton" title="Scroll To Top">
+      <i class="fa-solid fa-angles-up" style="color: #f9a03f"></i>
+    </a>
 
     <!-- Footer -->
     <footer>
