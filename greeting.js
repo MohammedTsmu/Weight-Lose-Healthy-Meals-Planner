@@ -59,16 +59,34 @@ function loadName() {
 
             // Determine the appropriate greeting based on the time of day
             var ampm;
+            var status;
 
             // Determine the appropriate greeting based on the time of day
             var greeting;
             if (hour >= 0 && hour < 12) {
                 greeting = "Good morning";
+                status = '<i class="fa-solid fa-mug-saucer"></i>';
+                status = '<i class="fa-solid fa-sun"></i> ';
             }
             else if (hour >= 12 && hour < 18) {
                 greeting = "Good afternoon";
+                status = '<i class="fa-solid fa-sun"></i> ';
             } else {
                 greeting = "Good evening";
+                status = '<i class="fa-solid fa-moon"></i> ';
+            }
+
+            // Determine the appropriate day status based on the time of day
+            if (hour >= 0 && hour < 6) {
+                status = ' <i class="fa-regular fa-moon"></i>';
+            }
+            else if (hour >= 6 && hour < 12) {
+                status = ' <i class="fa-regular fa-sun"></i>';
+            }
+            else if (hour >= 12 && hour < 18) {
+                status = ' <i class="fa-regular fa-sun"></i>';
+            } else {
+                status = ' <i class="fa-regular fa-moon"></i>';
             }
 
             if (hour >= 12) {
@@ -81,7 +99,7 @@ function loadName() {
 
 
             // Display the greeting with the current time in minutes
-            document.getElementById("greeting").innerHTML = "<div class='greeting'><h1>" + hour + ":" + (minute < 10 ? "0" : "") + minute + " " + ampm + ", " + greeting + ", " + name + "!</h1></div>";
+            document.getElementById("greeting").innerHTML = "<div class='greeting'><h1>" + hour + ":" + (minute < 10 ? "0" : "") + minute + " " + ampm + status + ", " + greeting + " " + name + "!</h1></div>";
         }, 1000); // Update every 1000 milliseconds (1 second)
 
         // document.getElementById("greeting").innerHTML = greeting + ", " + name + "!";
@@ -133,7 +151,7 @@ if (timeSinceLastDisplayed > 1000) {
 
             // Display the new message to the user
             const messageElement = document.getElementById("message");
-            messageElement.innerText = randomMessage.text;
+            messageElement.innerHTML = '<i class="fa-solid fa-quote-left fa-fade" style="color: #f9a03f;"></i> ' + randomMessage.text;
             // Show the motivation message div
             const motivationDiv = document.getElementById("motivation-message");
             motivationDiv.style.display = "block";
@@ -145,7 +163,7 @@ if (timeSinceLastDisplayed > 1000) {
             const lastDisplayedIndex = parseInt(lastDisplayed);
             const nextIndex = (lastDisplayedIndex + 1) % DEFAULT_MESSAGES.length;
             const messageElement = document.getElementById("message");
-            messageElement.innerText = DEFAULT_MESSAGES[nextIndex];
+            messageElement.innerHTML = '<i class="fa-solid fa-quote-left fa-fade" style="color: #f9a03f;"></i> ' + DEFAULT_MESSAGES[nextIndex];
             // Show the motivation message div
             const motivationDiv = document.getElementById("motivation-message");
             motivationDiv.style.display = "block";
