@@ -65,28 +65,28 @@ function loadName() {
             var greeting;
             if (hour >= 0 && hour < 12) {
                 greeting = "Good morning";
-                status = '<i class="fa-solid fa-mug-saucer"></i>';
-                status = '<i class="fa-solid fa-sun"></i> ';
             }
             else if (hour >= 12 && hour < 18) {
                 greeting = "Good afternoon";
-                status = '<i class="fa-solid fa-sun"></i> ';
             } else {
                 greeting = "Good evening";
-                status = '<i class="fa-solid fa-moon"></i> ';
             }
 
             // Determine the appropriate day status based on the time of day
             if (hour >= 0 && hour < 6) {
                 status = ' <i class="fa-regular fa-moon"></i>';
+                <i class="fa-solid fa-cloud-moon"></i>
             }
             else if (hour >= 6 && hour < 12) {
                 status = ' <i class="fa-regular fa-sun"></i>';
+                <i class="fa-solid fa-cloud-sun"></i>
             }
             else if (hour >= 12 && hour < 18) {
                 status = ' <i class="fa-regular fa-sun"></i>';
+                <i class="fa-solid fa-cloud-sun"></i>
             } else {
                 status = ' <i class="fa-regular fa-moon"></i>';
+                <i class="fa-solid fa-cloud-moon"></i>
             }
 
             if (hour >= 12) {
