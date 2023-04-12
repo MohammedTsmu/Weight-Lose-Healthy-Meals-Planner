@@ -75,18 +75,18 @@ function loadName() {
             // Determine the appropriate day status based on the time of day
             if (hour >= 0 && hour < 6) {
                 status = ' <i class="fa-regular fa-moon"></i>';
-                <i class="fa-solid fa-cloud-moon"></i>
+                status = ' <i class="fa-solid fa-cloud-moon"></i>';
             }
             else if (hour >= 6 && hour < 12) {
                 status = ' <i class="fa-regular fa-sun"></i>';
-                <i class="fa-solid fa-cloud-sun"></i>
+                status = '<i class="fa-solid fa-cloud-sun"></i>';
             }
             else if (hour >= 12 && hour < 18) {
                 status = ' <i class="fa-regular fa-sun"></i>';
-                <i class="fa-solid fa-cloud-sun"></i>
+                status = '<i class="fa-solid fa-cloud-sun"></i>';
             } else {
                 status = ' <i class="fa-regular fa-moon"></i>';
-                <i class="fa-solid fa-cloud-moon"></i>
+                status = ' <i class="fa-solid fa-cloud-moon"></i>';
             }
 
             if (hour >= 12) {
@@ -99,7 +99,7 @@ function loadName() {
 
 
             // Display the greeting with the current time in minutes
-            document.getElementById("greeting").innerHTML = "<div class='greeting'><h1>" + hour + ":" + (minute < 10 ? "0" : "") + minute + " " + ampm + status + ", " + greeting + " " + name + "!</h1></div>";
+            document.getElementById("greeting").innerHTML = "<div class='greeting'><h4>" + hour + ":" + (minute < 10 ? "0" : "") + minute + " " + ampm + status + " " + greeting + " " + name + "!</h4></div>";
         }, 1000); // Update every 1000 milliseconds (1 second)
 
         // document.getElementById("greeting").innerHTML = greeting + ", " + name + "!";
